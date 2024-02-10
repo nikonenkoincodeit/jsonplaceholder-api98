@@ -13,3 +13,11 @@ async function init() {
   }
 }
 init();
+
+tbodyEl.addEventListener("click", onCustomerName);
+
+function onCustomerName(e) {
+  const customerChoice = e.target.closest("[data-userid]");
+  const userId = customerChoice.dataset.userid;
+  location.href = `user.html?userid=${userId}`;
+}
